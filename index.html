@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom T-Shirt Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        .form-buttons {
+            text-align: center;
+        }
+        .form-buttons input[type="submit"],
+        .form-buttons input[type="reset"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .form-buttons input[type="reset"] {
+            background-color: #6c757d;
+        }
+        .form-buttons input[type="submit"]:hover,
+        .form-buttons input[type="reset"]:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Custom T-Shirt Order Form</h1>
+    <form action="/submit-order" method="post">
+        <fieldset>
+            <legend>Customize Your T-Shirt</legend>
+            
+            <label for="tagline">Tagline on the Shirt:</label>
+            <input type="text" id="tagline" name="tagline" placeholder="Enter your tagline" required>
+            
+            <label for="color">Color:</label>
+            <select id="color" name="color" required>
+                <option value="">Select a color</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+            </select>
+            
+            <label for="size">Size:</label>
+            <select id="size" name="size" required>
+                <option value="">Select a size</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="xlarge">Extra Large</option>
+            </select>
+            
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="100" value="1" required>
+            
+            <label for="delivery-date">Delivery Date:</label>
+            <input type="date" id="delivery-date" name="delivery-date" required>
+            
+            <fieldset>
+                <legend>Delivery Details</legend>
+                
+                <label for="recipient-name">Recipient's Name:</label>
+                <input type="text" id="recipient-name" name="recipient-name" placeholder="Full name" required>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="Street address" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email address" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit phone number" required>
+            </fieldset>
+            
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments" placeholder="Any additional comments or special instructions"></textarea>
+        </fieldset>
+        
+        <div class="form-buttons">
+            <input type="submit" value="Submit Order">
+            <input type="reset" value="Reset Form">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+
